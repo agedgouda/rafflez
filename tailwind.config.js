@@ -11,10 +11,18 @@ module.exports = {
     theme: {
         extend: {
             fontFamily: {
-                sans: ['Nunito', ...defaultTheme.fontFamily.sans],
+                sans: ['"Squada One"', ...defaultTheme.fontFamily.sans],
+            },
+            colors: {
+                blue: {
+                    25: '#eef1ff', // very pale blue, almost white
+                },
             },
         },
     },
 
-    plugins: [require('@tailwindcss/forms')],
+    plugins: [
+        require('@tailwindcss/forms'),
+        require('@tailwindcss/aspect-ratio'),
+    ],
 };
