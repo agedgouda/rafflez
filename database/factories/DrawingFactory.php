@@ -19,6 +19,7 @@ class DrawingFactory extends Factory
         return [
             'draw_date' => today()->addDays(rand(1, 10)),
             'max_tickets' => rand(100, 5000),
+            'ticket_price' => fake()->randomFloat(2, 1, 5),
         ];
     }
 }

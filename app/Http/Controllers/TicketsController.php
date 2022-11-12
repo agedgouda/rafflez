@@ -37,9 +37,9 @@ class TicketsController extends Controller
      */
     public function store(Request $request, Drawing $drawing)
     {
+        // TODO: Remove route model binding and just get the ID from the request payload
         auth()->user()->tickets()->create([
             'drawing_id' => $drawing->id,
-            'price' => 2.99,
         ]);
         return response()->json([
             'message' => __('Entered raffle'),

@@ -19,7 +19,6 @@ return new class extends Migration
             $table->id();
             $table->foreignIdFor(User::class);
             $table->foreignIdFor(Drawing::class);
-            $table->decimal('price');
             $table->softDeletes();
             $table->timestamps();
         });

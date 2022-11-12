@@ -21,6 +21,7 @@ return new class extends Migration
             $table->foreignIdFor(Category::class);
             $table->timestamp('draw_date');
             $table->smallInteger('max_tickets');
+            $table->decimal('ticket_price');
             $table->softDeletes();
             $table->timestamps();
         });
