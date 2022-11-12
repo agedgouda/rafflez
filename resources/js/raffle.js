@@ -10,9 +10,13 @@ export default () => ({
 					'Good job!',
 					response.data.message,
 					'success'
-				)
+				);
 			}).catch(error => {
-				console.log(error);
+				Swal.fire({
+					icon: 'error',
+					title: 'An error occured',
+					text: error.response.data.message,
+				});
 			});
 	}
 })

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Drawing;
 use App\Models\Ticket;
+use Exception;
 use Illuminate\Http\Request;
 
 class TicketsController extends Controller
