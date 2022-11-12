@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Drawing;
 use App\Models\Ticket;
 use Illuminate\Http\Request;
 
-class TicketController extends Controller
+class TicketsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -33,9 +34,15 @@ class TicketController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, Drawing $drawing)
     {
-        //
+        auth()->user()->tickets()->create([
+            'drawing_id' => $drawing->id,
+            'price' => 2.99,
+        ]);
+        return response()->json([
+            'message' => __('Entered raffle'),
+        ]);
     }
 
     /**
